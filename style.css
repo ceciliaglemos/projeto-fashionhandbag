@@ -20,19 +20,26 @@ header{
     background-color: var(--cor05);
     background-attachment: fixed;
     background-size: 100vw;
-    min-width: 200px;
-    height: 35vh;
+    min-width: 70vw;
+    height: 25vh;
     font-family: Fjalla One;
     margin:0px;
-    padding: 0px;
+    padding: 2vh;
 }
+
 header > h1 {
-    font-size: 12vw;
+    font-size: 7vw;
     text-align: center;
     text-overflow: clip;
     margin: 0px;
-    padding: 25px 0px 0px 0px;
+    padding: 5vh 0px 0px 0px;
+    background-attachment: fixed;
 }   
+#mobile {
+    display: none;
+    max-width: 340px;
+}
+
 nav {
     background-color: var(--cor05);
     padding: 9px;
