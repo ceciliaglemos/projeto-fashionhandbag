@@ -1,6 +1,29 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@keyframes fade {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }        
+}
+@keyframes progress {
+    to {
+        width: calc(100% - 10px);
+    }
+}
 
 :root{
     --cor01: #ecacac;
@@ -14,17 +37,51 @@ body {
     background-color: rgb(245, 216, 227);
     margin: 0px;
     padding: 0px;
+    min-width: 300px;
+    background-size: 100vw;
+}
+div {
+    text-align: center;
+    background-position: center top;
+}
+.noti {
+    position: fixed;
+    display: inline-block;
+    max-width: 300px;
+    padding: 20px 15px;
+    border-radius: 4px;
+    background-color: #734949;
+    color: aliceblue;
+    font-family: Rajdhani;
+    box-shadow: 0 1px 10px rgba (0, 0, 0, .1);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade 4s linear forwards;
+    text-align: center;
+}
+.progress {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, #ecacac, #ca4a4a );
+    border-radius: 4px;
+    animation: progress 3s 0.25s linear forwards;
+    background-position: center top;
 }
 
 header{
     background-color: var(--cor05);
     background-attachment: fixed;
     background-size: 100vw;
-    min-width: 70vw;
+    min-width: 300px;
     height: 25vh;
     font-family: Fjalla One;
     margin:0px;
     padding: 2vh;
+
 }
 
 header > h1 {
@@ -35,10 +92,6 @@ header > h1 {
     padding: 5vh 0px 0px 0px;
     background-attachment: fixed;
 }   
-#mobile {
-    display: none;
-    max-width: 340px;
-}
 
 nav {
     background-color: var(--cor05);
@@ -47,6 +100,7 @@ nav {
 }
 nav > a {
     font-family: Fjalla One;
+    font-size: 1.5vw;
     text-decoration: none;
     color: var(--cor04);
     padding: 7px
@@ -70,7 +124,7 @@ main > section {
 
 aside > h1{
     font-family: Fjalla One;
-    font-size: 3em;
+    font-size: 7vh;
     text-align: left;
     margin-left: 20px;
     background-image: linear-gradient(to left,var(--cor02), var(--cor05)30%, transparent);
@@ -89,8 +143,9 @@ aside > a:hover {
 footer {
     background-color: rgb(201, 177, 183);
     font-family: Rajdhani;
-    font-size: 0.8em;
+    font-size: 2vh;
     margin-top: 40px;
+    min-width: 300px;
 }
 footer > ul {
     list-style-type: none;
@@ -112,7 +167,7 @@ footer > p {
     background-color: transparent;
     text-align: center;
     font-family: Fjalla One;
-    font-size: 0.8em;
+    font-size: 1vw;
     margin: 25px 0px 0px 0px;
 }
 p > a {
